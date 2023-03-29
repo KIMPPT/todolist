@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600&display=swap');
+/*태그에 대한 디자인*/
+h1 {
+    font-size:2rem;
+    font-family: 'Noto Sans KR', sans-serif;
+    margin: 10px 0;
+    color: white;
+}
+ul{
+    color:white;
+}
+h3
+{
+    color:white;
+}
+/*각각 id에 따른 디자인*/
+#clock
+{
+    text-align:center;
+    font-size:2.5rem;
+    margin:30px 0;
+    text-shadow:0 0 20px black;
+}
+#greeting
+{
+    text-align:center;
+    color:aqua;
+}
+#loginform, #memoform
+{
+    text-align:center;
+}
+/*todolist 디자인*/
+#todolist{
+    margin:auto;
+    max-width:500px;
+    margin-top:10px;
+    padding:0 15px;
+}
+#todolist>li{
+    font-family: 'Noto Serif KR', serif;
+    clear:both;
+    margin:10px 0;
+}
+#todolist>li>button
+{
+    float:right;
+    background-color:transparent;
+    border:solid black 1px;
+    cursor: pointer; /*커서를 가져다 대면 포인터가 바뀐다.*/
+    border-radius:20px;
+    padding:2px 5px;
+}
+#todolist>li>span
+{
+    position:absolute;
+    right:150px;
+
+    /*
+    float:right;
+        padding-right:10px;
+        */
+    /*버튼을 이미 float:right로 정렬했기 때문에 시간은 absolute로 새로 맞춘 방법이다.
+    만약 똑같이 쓴다면 배치에 따라 달라지게 된다. span 다음에 button 으로 한다면 button 뒤에 span이 오고
+    button 다음에 span을 했다면 span 뒤에 button이 오는 형태가 된다.
+    button 먼저 오른쪽으로 오고 span이 그 다음에 오도록 스타일을 짰지만, js에서 순서가 우선으로 적용되기 때문에
+    span을 먼저 쓰고 button을 했다면 span이 먼저 오른쪽으로 가고 바로 왼쪽에 button이 붙는 형태가 되고
+    button을 먼저 쓰고 span을 했다면 button이 먼저 오른쪽으로 가고 바로 왼쪽에 span이 형태가 된다.*/
+    font-size:0.7rem;
+    margin-top:4px;
+}
+/*input[type="text"]와 [type="submit] 스타일*/
+input[type="text"]
+{
+    background-color:transparent; 
+    /*특수 스타일 : 투명 , currentcolor : 현재 색?*/
+    border:none;
+    border-bottom:3px white solid;
+    color:white;
+    font-family: 'Noto Sans KR', sans-serif;
+}
+input[type="text"]:focus
+{
+   outline:none; /*커서를 가져다 클릭했을 때 보이는 테두리를 없앰*/
+}
+input[type="text"]::placeholder{
+    color:white;
+} /*입력 전 표시에 대한 디자인*/
+/*버튼 디자인*/
+input[type="text"]+input[type="submit"]
+/*text타입 input 형제 태그로 submit타입 input타입으로 접근. 로그인 submit이랑 할 일 입력 submit 둘 다 적용된다*/
+{
+background-color:lightblue;
+border:none;
+border-radius:20px;
+padding:5px 7px;
+color:black;
+}
+/*버튼에 마우스 올렸을 때 디자인*/
+input[type="text"]+input[type="submit"]:hover
+{
+ background-color:lightcoral;
+}
+
+/*display를 아예 감출 class를 추가해줌. 이 class를 js에서 추가/제거를 제어해서 표현할 예정*/
+.hidden {
+    display: none;
+}
